@@ -35,4 +35,9 @@ public interface DownloadService {
     @Headers("Content-Type: application/json;charset=UTF-8")
     Call<ResponseBody> downloadFile(@Url String url);
 
+    @Streaming
+    @POST
+    @Headers("Content-Type: application/json;charset=UTF-8")
+    Call<ResponseBody> downloadFilePost(@Url String url);
+
 }

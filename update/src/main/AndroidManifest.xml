@@ -1,2 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zf.update" />
+    package="com.zf.update" >
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.file_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/update_file_paths" />
+        </provider>
+    </application>
+
+
+</manifest>
