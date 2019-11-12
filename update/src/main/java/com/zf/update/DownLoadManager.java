@@ -187,8 +187,11 @@ public class DownLoadManager {
                 }
                 Log.e(TAG,"onDownloadFinish file="+file.getPath());
                 outputStream.flush();
-                //设置下载成功后就立即安装
-                InstallUtils.installApk(mContext,file);
+                //设置静默下载时，不立即安装
+                if (!Config.isSilentDownload){
+                    //设置下载成功后就立即安装
+                    InstallUtils.installApk(mContext,file);
+                }
                 return true;
             } catch (IOException e) {
                 if (downloadListener!=null) {

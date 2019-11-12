@@ -72,6 +72,7 @@ public class DownloadBuilder {
         }
         public Builder isSilent(boolean isSilentDownload) {
             this.isSilentDownload = isSilentDownload;
+            Config.isSilentDownload = true;
             return this;
         }
 
